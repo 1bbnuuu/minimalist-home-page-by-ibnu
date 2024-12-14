@@ -14,6 +14,9 @@ body {
   color: #FFFFFF;
   background-color: #202124;
   color: #FFFFFF;
+  background: linear-gradient(-45deg, #1a1a1a, #333333, #222222, #000000);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
 }
 
 @keyframes fadeIn {
@@ -134,6 +137,17 @@ nav #extra-buttons a:hover {
   color: #202124;
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .sambutan {
   display: flex;
   justify-content: center;
@@ -297,13 +311,11 @@ input:checked + .slider:before {
 }
 
 footer {
-  background-color: #202124;
   text-align: center;
   padding: 5px 0;
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: #202124 1px solid;
 }
 
 footer p {
