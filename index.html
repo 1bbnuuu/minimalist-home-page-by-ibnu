@@ -17,11 +17,23 @@
             <p>Ibnu</p>
             <span id="current-time"></span>
             <div class="side">
-                <a href="https://rewards.bing.com/?signin=1&FORM=ANNRW1">
-                    <i class="fa-solid fa-award award"></i>
-                </a>
+                <div>
+                    <i class="fa-solid fa-circle-user award" id="main-button"></i>
+                </div>
+                <div id="extra-buttons" class="hidden">
+                    <a href="https://mail.google.com/mail/?authuser=0"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png" alt="" width="35px">Gmail</a>
+                    <a href="https://drive.google.com/?authuser=0"><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" alt="" width="35px">Drive</a>
+                    <a href="https://maps.google.com/?authuser=0"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="" width="25px">Maps</a>
+                    <a href="https://docs.google.com/spreadsheets/?usp=sheets_alc&amp;authuser=0"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Google_Sheets_2020_Logo.svg" alt="" width="30px">spreadsheets</a>
+                    <a href="https://docs.google.com/document/?usp=docs_alc&amp;authuser=0"><img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Google_Docs_2020_Logo.svg" alt="" width="30px">Docs</a>
+                    <a href="https://docs.google.com/forms/?authuser=0"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Google_Forms_logo_%282014-2020%29.svg" alt="" width="30px">Forms</a>
+                    <a href="https://classroom.google.com/?authuser=0"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Google_Classroom_Logo.svg" alt="" width="35px">classroom</a>
+                    <a href="https://meet.google.com?hs=197&amp;authuser=0"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" alt="" width="35px">Meet</a>
+                    <a href="https://gemini.google.com?utm_source=app_launcher&amp;utm_medium=owned&amp;utm_campaign=base_all&amp;authuser=0"><img src="https://lh3.googleusercontent.com/gglWI8y0x_H0LIUgCjTQp7RLHEkMVvcd5A4iH6V7BO-fqALnIaJAbVcBsfWa_3iCiK6ZdJhAyJf-dUPJfLXvIXTXXGdZxLDFY5Zbw4O0xyQRoQK_1ZU=h120" alt="" width="35px">Gemini</a>
+                </div>
             </div>
         </nav>
+        
 
         <div class="sambutan">
             <h1>WELCOME!</h1>
@@ -46,12 +58,24 @@
                     <p>YouTube</p>
                 </div>
             </a>
-            <a href="https://chatgpt.com/" class="tab">
+            <div class="tab">
                 <div class="tab-tail">
-                    <i class="fa-solid fa-robot icon"></i>
-                    <p>ChatGPT</p>
+                    <i class="fa-solid fa-microchip icon"></i>
+                    <p>AI</p>
                 </div>
-            </a>
+                <div class="dropdown hidden">
+                    <a href="https://chatgpt.com/" class="dropdown-item">ChatGPT</a>
+                    <a href="https://designer.microsoft.com/image-creator" class="dropdown-item">IC</a>
+                    <a href="https://www.perplexity.ai/" class="dropdown-item">Perplexity</a>
+                    <a href="https://www.perplexity.ai/" class="dropdown-item">Perplexity</a>
+                    <a href="https://www.perplexity.ai/" class="dropdown-item">Perplexity</a>
+                    <a href="https://www.perplexity.ai/" class="dropdown-item">Perplexity</a>
+                    <a href="https://www.perplexity.ai/" class="dropdown-item">Perplexity</a>
+
+                </div>
+            </div>
+            
+            
             <a href="https://translate.google.co.id/?hl=id&sl=en&tl=id&op=translate" class="tab">
                 <div class="tab-tail">
                     <i class="fa-solid fa-language icon"></i>
@@ -100,12 +124,6 @@
                     <p>Pinterest</p>
                 </div>
             </a>
-            <a href="https://designer.microsoft.com/image-creator" class="tab">
-                <div class="tab-tail">
-                    <i class="fa-solid fa-paintbrush icon"></i>
-                    <p>IC</p>
-                </div>
-            </a>
             <a href="https://www.citethisforme.com/" class="tab">
                 <div class="tab-tail">
                     <i class="fa-solid fa-quote-right icon"></i>
@@ -127,5 +145,35 @@
             <p>&copy; 2024 Ibnu. All rights reserved.</p>
         </footer>
         <script src="homebrowser.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const mainButton = document.getElementById('main-button');
+                const extraButtons = document.getElementById('extra-buttons');
+            
+                console.log(extraButtons.classList);
+            
+                mainButton.addEventListener('click', function () {
+                    extraButtons.classList.toggle('hidden');
+                });
+            
+                document.addEventListener('click', function (event) {
+                    if (!mainButton.contains(event.target) && !extraButtons.contains(event.target)) {
+                        extraButtons.classList.add('hidden');
+                    }
+                });
+            });
+            
+            document.addEventListener('hover', function (event) {
+                const tab = document.querySelector('.tab');
+                const dropdown = document.querySelector('.dropdown');
+            
+                if (!tab.contains(event.target)) {
+                    dropdown.style.display = 'none';
+                } else {
+                    dropdown.style.display = 'block';
+                }
+            });
+            
+        </script>
     </body>
 </html>
