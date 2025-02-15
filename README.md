@@ -1,1 +1,1 @@
-# HOME
+https://1bbnuuu.github.io/minimalist-home-page-by-ibnu/
